@@ -1,3 +1,4 @@
+import t
 import XCTest
 @testable import TaskManager
 
@@ -31,8 +32,6 @@ final class TaskManagerTests: XCTestCase {
 
         taskManager.cancel(key: .loop)
 
-        try await taskManager.wait(for: .loop)
-
-        print("Infinite Loop Task was cancelled")
+        try await t.assertThrows(try await taskManager.wait(for: .loop))
     }
 }
