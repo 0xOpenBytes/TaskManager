@@ -1,4 +1,3 @@
-import c
 import Cache
 
 /// A `TaskManager` is a cache for asynchronous tasks.
@@ -76,7 +75,10 @@ open class TaskManager<Key: Hashable>: Cache<Key, Task<Sendable, Error>> {
         let value = try await managedTask.value
 
         guard let success = value as? Success else {
-            throw c.InvalidTypeError(expectedType: type, actualValue: value)
+            throw InvalidTypeError(
+                expectedType: Success.self,
+                actualType: Sendable.self
+            )
         }
 
         return success

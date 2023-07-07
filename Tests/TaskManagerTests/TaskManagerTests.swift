@@ -1,4 +1,3 @@
-import t
 import XCTest
 @testable import TaskManager
 
@@ -32,6 +31,9 @@ final class TaskManagerTests: XCTestCase {
 
         taskManager.cancel(key: .loop)
 
-        try await t.assertThrows(try await taskManager.wait(for: .loop))
+        do {
+            try await taskManager.wait(for: .loop)
+            XCTFail()
+        } catch { }
     }
 }
