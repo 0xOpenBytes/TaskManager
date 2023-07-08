@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/0xLeif/Cache",
       "state" : {
-        "revision" : "a3f81b19f2b4699e1706673e89d6f792dd67a635",
-        "version" : "1.6.0"
+        "revision" : "d6d6325e1f7296cac4ff363ead7a47826f384cfa",
+        "version" : "2.0.0"
       }
     }
   ],
